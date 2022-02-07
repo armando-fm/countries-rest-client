@@ -1,6 +1,7 @@
 export class Country {
   name!: {
-    official: string
+    official: string;
+    nativeName: any;
   };
   capital!: string;
   region!: string;
@@ -9,4 +10,7 @@ export class Country {
     png: string;
     svg: string;
   };
+  population!: number;
+  area!: number;
+  timezones!: string[];
 }

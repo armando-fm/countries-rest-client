@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   private page = 1;
   private perPage = 10;
 
-  dtOptions: DataTables.Settings = {};
+  dtOptions: any = {};
   loading = true;
 
   constructor(private countryService: CountryService,
@@ -24,7 +24,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.dtOptions = {
-      pagingType: 'full_numbers'
+      pagingType: 'full_numbers',
+      dom: 'Bfrtip',
+      // Configure the buttons
+      buttons: [
+        'excel',
+        'csv',
+      ]
     };
 
     this.countryService.getCountries()

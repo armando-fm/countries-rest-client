@@ -6,12 +6,19 @@
     </mat-card-header>
     <img mat-card-image [src]="data.flags.png" alt="{{data.name.official}} Flag">
     <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
+      <mat-list>
+        <mat-list-item><b>Area:</b>&emsp;{{data.area | number : '1.2-2'}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item><b>Population:</b>&emsp;{{data.population | number : '1.2-2'}}</mat-list-item>
+        <mat-divider></mat-divider>
+        <div mat-subheader>Time Zones:</div>
+        <mat-list-item *ngFor="let timezone of data.timezones">
+          <div mat-line>{{timezone}}</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
     </mat-card-content>
+    <mat-list-item class="text-capitalize"><b>Native Name:</b>&emsp;{{getNativeName(data.name.nativeName)}}</mat-list-item>
   </mat-card>
 </div>
 <div mat-dialog-actions>

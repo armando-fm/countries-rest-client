@@ -10,19 +10,21 @@ import {MatIconModule} from "@angular/material/icon";
 import { CountryDetailsDialogComponent } from './country-details-dialog/country-details-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
   declarations: [HomeComponent, CountryDetailsDialogComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    DataTablesModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    MatIconModule,
-    MatDialogModule,
-    MatCardModule,
-  ]
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        DataTablesModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        MatIconModule,
+        MatDialogModule,
+        MatCardModule,
+        MatListModule,
+    ]
 })
 export class HomeModule { }

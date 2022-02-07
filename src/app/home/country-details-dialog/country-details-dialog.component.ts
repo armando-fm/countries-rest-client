@@ -15,4 +15,9 @@ export class CountryDetailsDialogComponent {
   onCloseClick(): void {
     this.dialogRef.close();
   }
+
+  getNativeName(nativeName: any) {
+    const keys = Object.keys(nativeName);
+    return nativeName[keys[0]].official;
+  }
 }
