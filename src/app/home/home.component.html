@@ -1,0 +1,55 @@
+
+<div class="container">
+  <div class="row mt-3 mb-3">
+    <div class="col-12">
+      <h1 class="title">List Of Countries</h1>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="loading">
+    <div class="col-12">
+      <mat-progress-spinner class="center" strokeWidth="1"></mat-progress-spinner>
+    </div>
+  </div>
+  <div class="row" *ngIf="!loading">
+    <div class="col-12">
+      <table
+        *ngIf="countries"
+        datatable
+        [dtOptions]="dtOptions"
+        class="row-border hover"
+      >
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Capital</th>
+          <th>Region</th>
+          <th>Sub-region</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let country of countries; index as i">
+          <td>{{ i }}</td>
+          <td>{{ country.name.official }}</td>
+          <td>{{ country.capital }}</td>
+          <td>{{ country.region }}</td>
+          <td>{{ country.subregion }}</td>
+          <td>
+            <button
+              mat-icon-button
+              aria-label="icon button with an eye icon"
+              color="primary"
+              (click)="onOpenDetails(country)"
+            >
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

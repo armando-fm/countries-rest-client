@@ -1,0 +1,26 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer>
+    <mat-nav-list>
+      <div class="nav-list-container">
+        <a mat-list-item routerLink=".">About</a>
+      </div>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar color="primary">
+      <button
+        mat-icon-button class="example-icon"
+        aria-label="icon-button with menu icon"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1 class="example-app-name">CountryPedia</h1>
+      <span class="spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
